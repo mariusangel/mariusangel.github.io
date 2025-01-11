@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Pictures</title>
+    <link rel="stylesheet" href="../Styles/CarStyle.css">
+    <style>
+        #navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 10px;
+            overflow: visible;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        #navbar li {
+            float: left;
+        }
+
+        #navbar .logo {
+            display: flex;
+            align-items: center;
+            color: rgb(0, 255, 213);
+            background-color: #333;
+            font-weight: bold;
+            padding: 14px 16px;
+            font-size: 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        #navbar .logo:hover {
+            background-color: #333;
+            scale: 1;
+        }
+        
+        #navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: medium;
+            padding: 19px 25px;
+            text-decoration: none;
+        }
+
+        #navbar li a:hover {
+            background-color: #292929;
+            scale: 1.1;
+        }
+
+        #navbar .active {
+            background-color: rgb(0, 209, 174);
+        }
+
+        #navbar .active:hover {
+            background-color: #444;
+        }
+
+        #navbar .language-dropdown {
+            position: relative;
+            z-index: 2000;
+        }
+        #navbar .language-dropdown:hover {
+            background-color: #525252;
+            scale: 1.1;
+        }
+
+        #navbar .language-dropdown #selected-language {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: white;
+            font-size: medium;
+            padding: 14px 16px;
+        }
+
+        #navbar .language-dropdown ul {
+            list-style-type: none;
+            margin-left: auto;
+            padding: 0;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #333;
+            display: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            width: 150px;
+            display: none;
+        }
+
+        #navbar .language-dropdown.open ul {
+            display: block;
+        }
+
+        #navbar .language-dropdown ul li {
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 15px;
+            padding: 10px 15px;
+            cursor: pointer;
+            color: white;
+            text-align: left;
+        }
+
+        #navbar .language-dropdown ul li:hover {
+            background-color: #444;
+        }
+    </style>
+  </head>
+
+  <div id="navbar">
+    <ul>
+        <li><a class="logo" data-translate="logo"> AMGSpecs</a></li>
+        <li><a class="active" href="../../index.html" data-translate="home">Home</a></li>
+        <li><a href="../../amg.html" data-translate="what_is_amg"> What is AMG?</a></li>
+        <li><a href="../../carmenu.html" data-translate="car_list"> CarList</a></li>
+        <li><a href="../../buycar.html" data-translate="buy_amg"> Buy an AMG</a><li>
+        <li><a href="../../contact.html" data-translate="contact_us"> Contact us</a><li>
+        <li style="float: right;" class="language-dropdown">
+            <div id="selected-language" onclick="toggleLanguageDropdown()">
+                <img src="../Icons/uk.png" alt="English flag" id="language-flag" style="width: 25px; height: 15px;">
+                <span id="language-text">EN</span>
+                ▼
+            </div>
+            <ul id="language-list" class="hidden">
+                <li onclick="changeLanguage('en')">
+                    <img src="../Icons/uk.png" alt="English" style="width: 25px; height: 15px;"> English
+                </li>
+                <li onclick="changeLanguage('ro')">
+                    <img src="../Icons/ro.png" alt="Romanian" style="width: 25px; height: 15px;"> Romanian
+                </li>
+                <li onclick="changeLanguage('fr')">
+                    <img src="../Icons/fr.png" alt="French" style="width: 25px; height: 15px;"> Francais
+                </li>
+                <li onclick="changeLanguage('de')">
+                    <img src="../Icons/de.png" alt="German" style="width: 25px; height: 15px;"> Deutsch
+                </li>
+            </ul>
+        </li>
+    </ul>
+  </div>
+
+    <div class="image-wrapper">
+        <img src="../Images/GT63/2025-GT63R.jpg" alt="gt63-image1">
+        <div class="text-overlay">
+            <p>More agility for the racetrack</p>
+            <p class="separator" style="color: red;">______________</p>
+            <h1>THE NEW MERCEDES-AMG <br>GT 63 PRO 4MATIC+</h1>
+        </div>
+    </div>
+    <h2 class="first-h2">A powerful increase in performance meets optimised aerodynamics meets improved cooling. The result: an even sportier 
+        driving experience for all enthusiasts who like to swap the road for the racetrack.
+    </h2>
+    <div class="specifications">
+        <div class="spec-item">
+            <span class="value">850</span>
+            <span class="measure-unit">Nm</span>
+            <span class="description">AMG 4.0-litre V8 biturbo engine</span>
+        </div>
+        <div class="divider">/</div>
+        <div class="spec-item">
+            <span class="value">3.2s</span>
+            <span class="measure-unit">0-100 km/h</span>
+            <span class="description">AMG SPEEDSHIFT MCT 9G</span>
+        </div>
+        <div class="divider">/</div>
+        <div class="spec-item">
+            <span class="value">450</span>
+            <span class="measure-unit">kw</span>  
+            <span class="description">317 km/h (electronically limited)</span>  
+        </div>
+    </div>
+    <div class="container">
+        <img src="../Images/GT63/wheel.webp" alt="wheel-img">
+        <div class="content">
+            <h1>The fine-tuning of the engine, <br>aerodynamics and cooling increases <br>performance and stability.</h1>
+            <p>&ldquo; Michael Schiebe, Chairman of the Board of Management of Mercedes-AMG GmbH and Head of the Mercedes-Benz G-Class & Mercedes Maybach divisions &rdquo;</p>
+        </div>
+    </div>
+    <div class="image-text">
+        <div class="text">
+            <h1>THE PERFECT ADDITION TO THE AMG GT FAMILY</h1>
+            <p id="underline">___________________________________________</p>
+            <p>Ideal for sports car fans: the Mercedes-AMG GT 63 PRO is aimed at anyone looking for exceptional driving dynamics. The agile response to your driving commands and the overall performance offer an even sportier driving experience, which is particularly noticeable on the occasional spin on the race track. More power, aerodynamic fine-tuning with further reduced aerodynamic lift and improved cooling contribute to enhanced driving dynamics and faster times on the circuit. <br/> <br>
+
+                The AMG 4.0-litre V8 biturbo engine in the 450 kW (612 hp) configuration delivers 20 kW (27 hp) more than the AMG GT 63 and ensures superior propulsion. The maximum torque has been increased by 50 Nm to 850 Nm for even more powerful acceleration. <br> <br>
+                The Mercedes-AMG GT 63 PRO is convincing in performance across the board, especially at higher speeds. The numbers: from zero to 200 km/h in just 10.9 seconds - with a top speed of 317 km/h.</p>
+        </div>
+        <img src="../Images/GT63/engine.webp" alt="engine-img">
+    </div>
+    <div class="image-text1">
+        <div class="text1">
+            <p id="uppertitle">Exterior</p>
+            <p id="underline">______________</p>
+            <h1>SPORTY FIRST LEAGUE-VISUALLY FIRST CLASS</h1>
+            <img src="../Images/GT63/2025-Mercedes-AMG-GT63-PRO-001-1080.jpg" alt="gt63-image">
+            <p id="uppertitle">Exterior design</p>
+            <p id="underline">___________________________________________</p>
+            <h1>MOTORSPORT-LIKE DOWN TO THE LAST DETAIL</h1>
+            <p>The standard AMG Exterior Carbon Fibre Package with front splitter, trim strips in the side sills, diffuser and rear wing in high-quality carbon fibre gives the Mercedes-AMG GT 63 PRO an absolute racetrack feel. <br><br>
+                The brake callipers are black-painted and the lightweight AMG Performance 21-inch forged wheels in cross-spoke design are painted exclusively in grey Himalaya matt.
+            </p>
+        </div>
+    </div>
+
+    <script src="../Scripts/script.js"></script>
+  </body>
+</html>

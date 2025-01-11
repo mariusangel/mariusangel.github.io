@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Pagina mea despre mercedes-benz</title>
+    <link rel="stylesheet" href="Styles/style.css">
+
+    <style>
+      #navbar ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 10px;
+          overflow: visible;
+          background-color: #333;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1000;
+          box-sizing: border-box;
+      }
+
+      #navbar li {
+          float: left;
+          padding-top: 0;
+      }
+
+      #navbar .logo {
+          display: flex;
+          align-items: center;
+          color: rgb(0, 255, 213);
+          background-color: #333;
+          font-weight: bold;
+          padding: 14px 16px;
+          font-size: 20px;
+          text-decoration: none;
+          text-align: center;
+      }
+
+      #navbar .logo:hover {
+          background-color: #333;
+          scale: 1;
+      }
+      
+      #navbar li a {
+          display: block;
+          color: white;
+          text-align: center;
+          font-weight: bold;
+          font-size: medium;
+          padding: 19px 25px;
+          text-decoration: none;
+      }
+
+      #navbar li a:hover {
+          background-color: #292929;
+          scale: 1.1;
+      }
+
+      #navbar .active {
+          background-color: rgb(0, 209, 174);
+      }
+
+      #navbar .active:hover {
+          background-color: #444;
+      }
+
+      #navbar .language-dropdown {
+          position: relative;
+          z-index: 2000;
+      }
+      #navbar .language-dropdown:hover {
+          background-color: #525252;
+          scale: 1.1;
+      }
+
+      #navbar .language-dropdown #selected-language {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          color: white;
+          font-size: medium;
+          padding: 0px 16px;
+      }
+
+      #navbar .language-dropdown ul {
+          list-style-type: none;
+          margin-left: auto;
+          padding: 0;
+          position: absolute;
+          top: 100%;
+          right: 0;
+          background-color: #333;
+          display: none;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+          width: 150px;
+          display: none;
+      }
+
+      #navbar .language-dropdown.open ul {
+          display: block;
+      }
+
+      #navbar .language-dropdown ul li {
+          width: 100%;
+          box-sizing: border-box;
+          font-size: 15px;
+          padding: 10px 15px;
+          cursor: pointer;
+          color: white;
+          text-align: left;
+      }
+
+      #navbar .language-dropdown ul li:hover {
+          background-color: #444;
+      }
+  </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <ul>
+          <li><a class="logo" data-translate="logo"> AMGSpecs</a></li>
+          <li><a class="active" href="../../index.html" data-translate="home">Home</a></li>
+          <li><a href="../../amg.html" data-translate="what_is_amg"> What is AMG?</a></li>
+          <li><a href="../../carmenu.html" data-translate="car_list"> CarList</a></li>
+          <li><a href="../../buycar.html" data-translate="buy_amg"> Buy an AMG</a><li>
+          <li><a href="../../contact.html" data-translate="contact_us"> Contact us</a><li>
+          <li style="float: right;" class="language-dropdown">
+              <div id="selected-language" onclick="toggleLanguageDropdown()">
+                  <img src="Icons/uk.png" alt="English flag" id="language-flag" style="width: 25px; height: 15px;">
+                  <span id="language-text">EN</span>
+                  ▼
+              </div>
+              <ul id="language-list" class="hidden">
+                  <li onclick="changeLanguage('en')">
+                      <img src="Icons/uk.png" alt="English" style="width: 25px; height: 15px;"> English
+                  </li>
+                  <li onclick="changeLanguage('ro')">
+                      <img src="Icons/ro.png" alt="Romanian" style="width: 25px; height: 15px;"> Romanian
+                  </li>
+                  <li onclick="changeLanguage('fr')">
+                      <img src="Icons/fr.png" alt="French" style="width: 25px; height: 15px;"> Francais
+                  </li>
+                  <li onclick="changeLanguage('de')">
+                      <img src="Icons/de.png" alt="German" style="width: 25px; height: 15px;"> Deutsch
+                  </li>
+              </ul>
+          </li>
+      </ul>
+  </div>
+  <p>More agility for the racetrack</p>
+  <p>_____</p>
+    <h1>The Mercedes-AMG GT 63 PRO 4MATIC+</h1>
+    <p>A powerful increase in performance meets optimised aerodynamics meets improved cooling. The result: an even sportier driving experience for all enthusiasts who like to swap the road for the racetrack.</p>
+    <a href="Cars/GT63PRO.html">
+      <h2>To the vehicle</h2>
+    </a>
+    <img src="Images/GT63/taillightimage.webp" alt="gt63-image">
+
+    <script src="Scripts/script.js"></script>
+  </body>
+</html>

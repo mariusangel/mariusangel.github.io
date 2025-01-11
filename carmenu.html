@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Car List</title>
+    <link rel="stylesheet" href="Styles/LanguageStyle.css">
+    <style>
+        #navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 10px;
+            overflow: visible;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        #navbar li {
+            float: left;
+        }
+
+        #navbar .logo {
+            display: flex;
+            align-items: center;
+            color: rgb(0, 255, 213);
+            background-color: #333;
+            font-weight: bold;
+            padding: 14px 16px;
+            font-size: 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        #navbar .logo:hover {
+            background-color: #333;
+            scale: 1;
+        }
+        
+        #navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: medium;
+            padding: 19px 25px;
+            text-decoration: none;
+        }
+
+        #navbar li a:hover {
+            background-color: #292929;
+            scale: 1.1;
+        }
+
+        #navbar .active {
+            background-color: rgb(0, 209, 174);
+        }
+
+        #navbar .active:hover {
+            background-color: #444;
+        }
+
+        #navbar .language-dropdown {
+            position: relative;
+            z-index: 2000;
+        }
+        #navbar .language-dropdown:hover {
+            background-color: #525252;
+            scale: 1.1;
+        }
+
+        #navbar .language-dropdown #selected-language {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: white;
+            font-size: medium;
+            padding: 14px 16px;
+        }
+
+        #navbar .language-dropdown ul {
+            list-style-type: none;
+            margin-left: auto;
+            padding: 0;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #333;
+            display: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            width: 150px;
+            display: none;
+        }
+
+        #navbar .language-dropdown.open ul {
+            display: block;
+        }
+
+        #navbar .language-dropdown ul li {
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 15px;
+            padding: 10px 15px;
+            cursor: pointer;
+            color: white;
+            text-align: left;
+        }
+
+        #navbar .language-dropdown ul li:hover {
+            background-color: #444;
+        }
+        /*imagine si campuri de input*/
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 180px;
+            background-color: #535353;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .image-container img {
+            width: 100%;
+            display: block;
+            border-radius: 15px;
+            box-shadow: 5px 10px 12px rgba(0, 0, 0, 0.7);
+        }
+        
+        .overlay-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 0px 0px 5px rgba(151, 151, 151, 0.8);
+            z-index: 2;
+        }
+
+        .overlay-content h1,
+        .overlay-content h2 {
+            margin: 10px 0;
+        }
+
+        #searchBar{
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            background: rgba(34, 34, 34, 0.7);
+            color: white;
+
+        }
+
+        #searchBar:hover{
+            background: #2b2b2b;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .overlay-content .car-list{
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        .overlay-content .car-list li{
+            padding: 10px;
+            background:rgba(37, 37, 37, 0.7);
+            width: 400px;
+            margin: 5px 0;
+            border: 1px solid #00f7e2;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            
+        }
+
+        .overlay-content .car-list li:hover {
+            background: #3eb3ad;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div id="navbar">
+        <ul>
+            <li><a class="logo" data-translate="logo"> AMGSpecs</a></li>
+            <li><a class="active" href="../../index.html" data-translate="home">Home</a></li>
+            <li><a href="../../amg.html" data-translate="what_is_amg"> What is AMG?</a></li>
+            <li><a href="../../carmenu.html" data-translate="car_list"> CarList</a></li>
+            <li><a href="../../buycar.html" data-translate="buy_amg"> Buy an AMG</a><li>
+            <li><a href="../../contact.html" data-translate="contact_us"> Contact us</a><li>
+            <li style="float: right;" class="language-dropdown">
+                <div id="selected-language" onclick="toggleLanguageDropdown()">
+                    <img src="Icons/uk.png" alt="English flag" id="language-flag" style="width: 25px; height: 15px;">
+                    <span id="language-text">EN</span>
+                    ▼
+                </div>
+                <ul id="language-list" class="hidden">
+                    <li onclick="changeLanguage('en')">
+                        <img src="Icons/uk.png" alt="English" style="width: 25px; height: 15px;"> English
+                    </li>
+                    <li onclick="changeLanguage('ro')">
+                        <img src="Icons/ro.png" alt="Romanian" style="width: 25px; height: 15px;"> Romanian
+                    </li>
+                    <li onclick="changeLanguage('fr')">
+                        <img src="Icons/fr.png" alt="French" style="width: 25px; height: 15px;"> Francais
+                    </li>
+                    <li onclick="changeLanguage('de')">
+                        <img src="Icons/de.png" alt="German" style="width: 25px; height: 15px;"> Deutsch
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="image-container">
+        <img src="../Images/282963l-1000x640-b-bfb8ea05.jpg" alt="Imagine cu stiluri">
+        <div class="overlay-content">
+            <h1 data-translate="search_title">Car List</h1>
+            <h2 data-translate="search_subtitle">Search for an AMG car:</h2>
+            <input type="text" id="searchBar" placeholder="Search for a car model..." data-translate="Search_placeholder" oninput="filterCars()">
+            <ul class="car-list" id="carList">
+                <li onclick="goToCarPage('Cars/MercedesCLS.html')" data-translate="car_cls"> CLS 53 AMG</li>
+                <li onclick="goToCarPage('Cars/AMG-GT-4-DOOR.html')" data-translate="car_gt"> AMG GT-63S 4-DOOR COUPE E</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="Scripts/script.js"></script>
+  </body>
+</html>
