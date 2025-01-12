@@ -11,8 +11,8 @@ Proiectul meu este despre un subbrand auto denumit AMG in care poti cauta inform
 
 -Buy an AMG - cuprinde un link care duce catre site ul oficial mercedes AMG direct in configurator de unde poti achizitiona modelul dorit
 
--Contact - sectiunea contact cuprinde un form cu mai multe campuri unde introduci datele personale si mesajul dorit, care functioneaza bineinteles!
+-Contact - sectiunea contact cuprinde un form cu mai multe campuri unde introduci datele personale si mesajul dorit, care functioneaza!
 
-Site ul mai beneficiaza si de un language selector oferind 4 limbi disponibile la alegere
+Site ul mai beneficiaza si de un language selector oferind 4 limbi disponibile la alegere care nu este in totalitate implementat
 
 Site ul poate fi accesat prin introducerea acestui link in browser: mariusangel.github.io
