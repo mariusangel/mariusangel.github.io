@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Miere de salcam",
+    "description": "Miere naturala de salcam, 100% pura din stup",
+    "price": "25 ron",
+    "image": "thumbnails/miere-salcam.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Miere de Tei",
+    "description": "Miere de tei, cu aromă intensă și beneficii pentru sănătate.",
+    "price": "20 RON",
+    "image": "thumbnails/miere-tei.jpg"
+  }
+]
