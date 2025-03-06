@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       document.querySelector('.view-cart-btn').addEventListener('click', () => {
-        window.location.href = 'cos.html';
+        window.location.href = '/Magazin/cos.html';
       });
 
       // document.addEventListener('click', () => {
